@@ -4,6 +4,7 @@ import os.path
 import sys
 
 if __name__ == "__main__":
+    """Aggregates DRAGEN *_metric.csv files in the current directory"""
 
     # list metric files in the current path
     file_list = glob.glob("*/*_metrics.csv")
