@@ -3,8 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-#IDE
+# IDE
 .DS_Store
+.idea/modules.xml
+.idea/*
 
 # C extensions
 *.so
