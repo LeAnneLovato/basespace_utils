@@ -1,5 +1,10 @@
 #!/bin/bash
 
+##########################################
+# Author: LeAnne Lovato
+# GitHub: https://github.com/LeAnneLovato
+##########################################
+
 # required args
 name=$1
 type=$2

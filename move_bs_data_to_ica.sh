@@ -1,5 +1,10 @@
 #!/bin/bash
 
+##########################################
+# Author: LeAnne Lovato
+# GitHub: https://github.com/LeAnneLovato
+##########################################
+
 # required cmd line inputs
 project=$1
 bs_id=$2

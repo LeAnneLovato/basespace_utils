@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
+"""Aggregates DRAGEN *_metric.csv files in the current directory"""
+
 import glob
 import os.path
 import sys
 
-if __name__ == "__main__":
+##########################################
+# Author: LeAnne Lovato
+# GitHub: https://github.com/LeAnneLovato
+##########################################
 
+
+if __name__ == "__main__":
     # list metric files in the current path
     file_list = glob.glob("*/*_metrics.csv")
 

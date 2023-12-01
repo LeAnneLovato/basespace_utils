@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Launch BSSH DRAGEN GERMLINE: 3.8.9, 4.0.3"""
 
+##########################################
+# Author: LeAnne Lovato
+# GitHub: https://github.com/LeAnneLovato
+##########################################
+
 import subprocess
 import argparse
 import pathlib
