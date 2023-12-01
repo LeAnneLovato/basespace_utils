@@ -1,6 +1,7 @@
 # basespace_utils
-Scripts to automate processes on Illumina's BaseSpace Sequence Hub
+Tools to automate processes on Illumina's BaseSpace Sequence Hub and ICA platforms
 
-Required:
+Required Packages:
+- python3 
 - BS CLI - https://developer.basespace.illumina.com/docs/content/documentation/cli/cli-overview
-- python3 lib
+- ICA CLI - https://help.ica.illumina.com/command-line-interface/cli-releasehistory
