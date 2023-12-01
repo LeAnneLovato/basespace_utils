@@ -1,5 +1,10 @@
-# basespace_utils
-Tools to automate processes on Illumina's BaseSpace Sequence Hub and ICA platforms
+# illumina_utils
+Tools to automate processes on Illumina's BSSH and ICA platforms
+- Auto-launch DRAGEN on BSSH
+- Move data on BSSH and ICA
+- Ingest and process cases in TruSight Software Suite (TSS)
+- Aggregate DRAGEN QC metrics
+- Compare DRAGEN and SAMtools coverage
 
 Required Packages:
 - python3 
