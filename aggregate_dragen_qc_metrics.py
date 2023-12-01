@@ -31,3 +31,4 @@ if __name__ == "__main__":
                 print(f"{sample_id},{fields[0]},{fields[1]},{fields[2]} (%),{fields[4]}")
             else:
                 sys.exit("Error reading number of fields")
+
