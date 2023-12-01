@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
+"""Aggregates DRAGEN *_metric.csv files in the current directory"""
+
 import glob
 import os.path
 import sys
 
-if __name__ == "__main__":
-    """Aggregates DRAGEN *_metric.csv files in the current directory"""
+##########################################
+# Author: LeAnne Lovato
+# GitHub: https://github.com/LeAnneLovato
+##########################################
 
+
+if __name__ == "__main__":
     # list metric files in the current path
     file_list = glob.glob("*/*_metrics.csv")
 
@@ -31,4 +37,3 @@ if __name__ == "__main__":
                 print(f"{sample_id},{fields[0]},{fields[1]},{fields[2]} (%),{fields[4]}")
             else:
                 sys.exit("Error reading number of fields")
-
