@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Aggregates DRAGEN *_metric.csv files in the current directory"""
+"""Per sample name, aggregate the DRAGEN *_metric.csv files in the current directory"""
 
 import glob
 import os.path
