@@ -1,0 +1,61 @@
+# Example Command Lines
+
+# Short flags - start_otg.py
+- python3 scripts/start_otg.py -o <output directory> -i <input ehr>
+- python3 scripts/start_otg.py -o ~/Desktop -i resources/ehr/chr_22.json
+- python3 scripts/start_otg.py -o <Output Directory> -i <Input EHR> -c <TSS Config File>
+- python3 scripts/start_otg.py -o ~/Desktop -i resources/ehr/chr_22.json -c ~/.illumina/otg_test.json
+
+# Create config file
+# python3 scripts/create_config.py
+
+# Post case from json - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -n post_case -j resources/case/case.json -o ~/Desktop
+
+# Post case from csv - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -n post_case -o ~/Desktop -i resources/case/input-case_post_single.csv
+
+# Get case details - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -o ~/Desktop -n get_case_details -d ILM-HGK-QIYD
+
+# Get case details and pre-signed URLs for DRAGEN results - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -o ~/Desktop -n get_case_details -d ILM-HGK-QIYD -lo
+
+# Get a single pre-signed url - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -o ~/Desktop -n get_presigned_url -fp gds://wgs-9f3751a6-a8e9-4da9-9c73-ea50ece20507/b151b099-3af5-30a3-bd0e-31437165d358/cases/5b14d257-b779-483e-917f-5f29696ec9da/fwb.6fd5890ff3fd4f5190487f032a7da442/joint-variants/repeats/5b14d257-b779-483e-917f-5f29696ec9da.repeats.merged.vcf.gz
+
+# Delete a case - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -o ~/Desktop -n delete_case -d CHR22-5
+
+# Delete multiple cases - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -o ~/Desktop -n delete_case -d CHR22-1,CHR22-3
+
+# QC modify - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -o ~/Desktop -n qc_modify -d CHR22_JENN9
+
+# QC override - case_mgt_v2.py
+- python3 scripts/case_mgt_v2.py -c ~/.illumina/otg_test.json -o ~/Desktop -n qc_override -d CHR22_JENN5
+
+# Create & post biosample manifest without BSSH config
+- python3 scripts/start_sample_pipeline.py -o ~/Desktop --pipeline bssh -s resources/samples/sample_sheet.csv -y 150 -p otg-testing --tss_config ~/.illumina/otg_test.json --biosample biosample_manifest
+
+# Create biosamples (without manifest) without BSSH config
+- python3 scripts/start_sample_pipeline.py -o ~/Desktop --pipeline bssh -s resources/samples/sample_sheet.csv -y 150 -p otg-testing --tss_config ~/.illumina/otg_test.json --biosample create_new
+
+# Update existing biosamples without BSSH config
+- python3 scripts/start_sample_pipeline.py -o ~/Desktop --pipeline bssh -s resources/samples/sample_sheet.csv -y 150 -p otg-testing --tss_config ~/.illumina/otg_test.json --biosample update_existing
+
+# Create & post biosample manifest with BSSH config
+- python3 scripts/start_sample_pipeline.py -o ~/Desktop --pipeline bssh -s resources/samples/sample_sheet.csv -y 150 -p otg-testing --bssh_config ilmn-demo_otg_samples --biosample biosample_manifest
+
+# Create biosamples (without manifest) with BSSH config
+- python3 scripts/start_sample_pipeline.py -o ~/Desktop --pipeline bssh -s resources/samples/sample_sheet.csv -y 150 -p otg-testing --bssh_config ilmn-demo_otg_samples --biosample create_new
+
+# Update existing biosamples with BSSH config
+- python3 scripts/start_sample_pipeline.py -o ~/Desktop --pipeline bssh -s resources/samples/sample_sheet.csv -y 150 -p otg-testing --bssh_config ilmn-demo_otg_samples --biosample update_existing
+
+# Filter case list by Tags, Status, Creators, Dates
+- python3 utils/filter_case_list.py -c ~/.illumina/otg_test.json -o ~/Desktop -s tags -it OTG,Keep -is Complete,"In Progress" -ec "Jeff Sanchez","LeAnne Lovato" -ed 2022-10-01,2022-10-31
+- python3 utils/filter_case_list.py -c ~/.illumina/otg_test.json -o ~/Desktop -s dates -id 2021-01-01,2021-12-31 -ec "Jill Xu","LeAnne Lovato" -ed 2022-10-01,2022-10-31 -es Complete
+- python3 utils/filter_case_list.py -c ~/.illumina/otg_test.json -o ~/Desktop -s status -et OTG,Keep -is Complete,"In Progress" -ec "Aaron Air","LeAnne Lovato" -id 2022-10-01,2022-10-31
+- python3 utils/filter_case_list.py -c ~/.illumina/otg_test.json -o ~/Desktop -s creators -ic "Jeremy Shanks","LeAnne Lovato" -id 2022-10-01,2022-10-31 -et OTG,Keep -is New,"In Progress",Complete
